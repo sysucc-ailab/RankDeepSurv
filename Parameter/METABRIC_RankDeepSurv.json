@@ -1,0 +1,14 @@
+{
+  "datapath":"/media/sysucc99/data/ZTROOT/2017MainText/data/METABRIC/metabric_IHC4_clinical_train_test.h5",
+    "batch_size":64,
+  "numepoch":101,
+  "L2": 0.25,
+  "dropout": 0.3,
+  "learning_rate": 0.0009,
+  "lr_decay": 2e-6,
+  "momentum": 0.8,
+  "activation": "relu",
+  "n_in": 9,
+  "batch_norm": false,
+  "hidden_layers_sizes": [40,80, 40,20,10]}
+

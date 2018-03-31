@@ -1,0 +1,14 @@
+{
+  "datapath":"/media/sysucc99/data/ZTROOT/2017MainText/data/GBSG/gbsg_cancer_train_test.h5",
+    "batch_size":64,
+  "numepoch":211,
+  "L2": 0.01,
+  "dropout": 0.4,
+  "learning_rate": 0.001,
+  "lr_decay": 1e-5,
+  "momentum": 0.8,
+  "activation": "relu",
+  "n_in": 7,
+  "batch_norm": false,
+  "hidden_layers_sizes": [40,80, 40,20,10]}
+

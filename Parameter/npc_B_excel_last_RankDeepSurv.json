@@ -1,0 +1,14 @@
+{
+  "datapath":"/media/sysucc99/data/ZTROOT/2017MainText/data/NPC/npc_B_excel_last.h5",
+    "batch_size":64,
+  "numepoch":211,
+  "L2": 0.01,
+  "dropout": 0.3,
+  "learning_rate": 0.0001,
+  "lr_decay": 3e-5,
+  "momentum": 0.83,
+  "activation": "relu",
+  "n_in": 9,
+  "batch_norm": false,
+  "hidden_layers_sizes": [50,100, 100,100]}
+
