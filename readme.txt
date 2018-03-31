@@ -1,10 +1,10 @@
 
 ##################
-"Model" include main program
+"Model" includes main program
 
 ####################
-"Parameter" include  hyperparameter
+"Parameter" includes  hyperparameter
 
 ###################
 data->npc
-"npc" include all dataset
+"npc" includes all dataset
