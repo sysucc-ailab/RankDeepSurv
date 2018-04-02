@@ -232,12 +232,12 @@ class VizCallBack(Callback):
 
             self.Cindex.append(CI)
             history = {'cindex': self.Cindex, 'loss': self.losses}
-            with open('../logs/' + self.weight + '_log.txt', 'w') as f:
-                f.write(str(history))
-                print 'test Cindex', self.Cindex
-                print '\n'
+            #with open('../logs/' + self.weight + '_log.txt', 'w') as f:
+            #    f.write(str(history))
+            print 'test Cindex', self.Cindex
+            print '\n'
                 #self.predictmodel.save_weights('./weight/bestCI/' + self.weight + '_CI_%02d.h5' % (epoch))
-                print 'saveCI successful'
+            print 'saveCI successful'
 
 
 def bootstrap_metric(predictmodel, dataset,batchsize, N=100):
@@ -323,17 +323,12 @@ def trainmodel(trainset,
 
 if __name__ == '__main__':
 
-    SUPPORT = '/media/sysucc99/data/ZTROOT/2017MainText/Parameter/SUPPORT_RankDeepSurv.json'
-    METABRIC = '/media/sysucc99/data/ZTROOT/2017MainText/Parameter/METABRIC_RankDeepSurv.json'
-    GBSG = "/media/sysucc99/data/ZTROOT/2017MainText/Parameter/GBSG_RankDeepSurv.json"
-    whas = '/media/sysucc99/data/ZTROOT/2017MainText/Parameter/WHAS_RankDeepSurv.json'
-    npc_A_excel = '/media/sysucc99/data/ZTROOT/2017MainText/Parameter/npc_A_excel_RankDeepSurv.json'
-    npc_B_excel = '/media/sysucc99/data/ZTROOT/2017MainText/Parameter/npc_B_excel_RankDeepSurv.json'
-    npc_A_excel_last = '/media/sysucc99/data/ZTROOT/2017MainText/Parameter/npc_A_excel_last_RankDeepSurv.json'
-    npc_A_excel_last_best = '/media/sysucc99/data/ZTROOT/2017MainText/Parameter/npc_A_excel_last_RankDeepSurv_best.json'
-    npc_B_excel_last = '/media/sysucc99/data/ZTROOT/2017MainText/Parameter/npc_B_excel_last_RankDeepSurv.json'
-    npc_A_excel_last_2_PFSmonths = '/media/sysucc99/data/ZTROOT/2017MainText/Parameter/npc_A_excel_last_2_PFSmonths_RankDeepSurv.json'
-    npc_B_excel_last_2_PFSmonths = '/media/sysucc99/data/ZTROOT/2017MainText/Parameter/npc_B_excel_last_2_PFSmonths_RankDeepSurv.json'
+    SUPPORT = './Parameter/SUPPORT_RankDeepSurv.json'
+    METABRIC = './Parameter/METABRIC_RankDeepSurv.json'
+    GBSG = "./Parameter/GBSG_RankDeepSurv.json"
+    whas = './Parameter/WHAS_RankDeepSurv.json'
+    npc_A_excel_last_best = './Parameter/npc_A_excel_last_RankDeepSurv_best.json'
+
 
     jsonmodel = npc_A_excel_last_2_PFSmonths
     with open(jsonmodel, 'r') as fp:
