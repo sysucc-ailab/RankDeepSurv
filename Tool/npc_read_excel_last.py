@@ -17,7 +17,7 @@ def getDataset(textpath,factors,sheetname):
     index = range(0, numrow)
     random.shuffle(index)
     tindex = index[0:numrow]
-    df = DF[factors] #u'首次治疗时间'
+    df = DF[factors] 
     data = np.array(df)
 
     # proprecessing
@@ -42,9 +42,8 @@ def getDataset(textpath,factors,sheetname):
 if __name__ == '__main__':
     textpath = '/media/sysucc99/data/ZTROOT/2017MainText/excel file/NPC/npc_last_all.xlsx'
 
-    factors = [u'性别', u'T分期UICC七', u'N分期UICC七', u'CRP', u'LDH',u'年龄', u'HGB',  u'BMI',u'EBVDNA','OSmonths',u'患者死亡状态']
-    #, u'VCAIgA1', u'EAIgA1', u'ALB', u'GLOB', u'WBC', u'NE2', u'LY2',  u'PLT',
-    #u'身高平方'
+    factors = [u'sex', u'T stage', u'N stage', u'CRP', u'LDH',u'age', u'HGB',  u'BMI',u'EBVDNA','survival',u'indicator']
+  
     text,e,t= getDataset(textpath=textpath,factors=factors,sheetname='raw_train')
     tstext, tse, tst = getDataset(textpath=textpath,factors=factors,sheetname='raw_test')
 
