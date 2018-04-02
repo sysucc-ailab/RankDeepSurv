@@ -327,7 +327,8 @@ if __name__ == '__main__':
     METABRIC = './Parameter/METABRIC_RankDeepSurv.json'
     GBSG = "./Parameter/GBSG_RankDeepSurv.json"
     whas = './Parameter/WHAS_RankDeepSurv.json'
-    npc_A_excel_last_best = './Parameter/npc_A_excel_last_RankDeepSurv_best.json'
+    npc_A_excel_last_best = './Parameter/npc_A_excel_last_RankDeepSurv.json'
+    npc_B_excel_last_best = './Parameter/npc_B_excel_last_RankDeepSurv.json'
 
 
     jsonmodel = npc_A_excel_last_2_PFSmonths
