@@ -1,13 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-from keras.preprocessing.image import ImageDataGenerator
-from PIL import Image as pil_image
 import pandas as pd
 import random
-import time
-import os
-from datetime import datetime
 import h5py
 
 
@@ -17,7 +12,7 @@ def getDataset(textpath,factors,sheetname):
     index = range(0, numrow)
     random.shuffle(index)
     tindex = index[0:numrow]
-    df = DF[factors] 
+    df = DF[factors] #u'首次治疗时间'
     data = np.array(df)
 
     # proprecessing
@@ -40,14 +35,17 @@ def getDataset(textpath,factors,sheetname):
 
 
 if __name__ == '__main__':
-    textpath = '/media/sysucc99/data/ZTROOT/2017MainText/excel file/NPC/npc_last_all.xlsx'
+    textpath = '../excel file/npcData/npc_last_all_2ci.xlsx'
 
-    factors = [u'sex', u'T stage', u'N stage', u'CRP', u'LDH',u'age', u'HGB',  u'BMI',u'EBVDNA','survival',u'indicator']
-  
-    text,e,t= getDataset(textpath=textpath,factors=factors,sheetname='raw_train')
-    tstext, tse, tst = getDataset(textpath=textpath,factors=factors,sheetname='raw_test')
+    factors = [u'gender', u'TUICC', u'NUICC', u'CRP', u'LDH',u'age', u'HGB',  u'BMI',u'EBVDNA','PFSmonths','outcome']
+    #factors = [u'sex', u'TUICC', u'NUICC', u'CRP', u'LDH',u'age', u'HGB',  u'BMI','PFSmonths',u'outcome']  #cphA
+    #factors = [u'sex', u'TUICC', u'NUICC', u'CRP', u'LDH',u'age', u'HGB',  u'BMI',u'EBVDNA','PFSmonths',u'outcome']  #cphB
+    #, u'VCAIgA1', u'EAIgA1', u'ALB', u'GLOB', u'WBC', u'NE2', u'LY2',  u'PLT',
+    #u'身高平方'
+    text,e,t= getDataset(textpath=textpath,factors=factors,sheetname='train')
+    tstext, tse, tst = getDataset(textpath=textpath,factors=factors,sheetname='test')
 
-    file = h5py.File('/media/sysucc99/data/ZTROOT/2017MainText/data/NPC/npc_A_excel_last.h5', 'w')
+    file = h5py.File('../data/npcData/pfs_npc_A_ranksurv.h5', 'w')
     file.create_group('train')
     file['train'].create_dataset('x',data=text)
     file['train'].create_dataset('t',data=t)

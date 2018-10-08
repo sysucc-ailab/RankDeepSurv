@@ -1,0 +1,16 @@
+{
+  "datapath":"../ZTROOT/2017MainText/data/npcData/pfs_npc_A_ranksurv.h5",
+  "batch_size":64,
+  "numepoch":1,
+  "L2": 8.2,
+  "dropout": 0.28,
+  "learning_rate": 0.000030504,
+  "lr_decay": 0.00000125,
+  "momentum": 0.882407422,
+
+  "activation": "elu",
+  "n_in": 8,
+  "batch_norm": "False",
+  "hidden_layers_sizes": [120,120,120]}
+
+
